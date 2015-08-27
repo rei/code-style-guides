@@ -1,6 +1,6 @@
-# REI Stylesheet Style Guide
+# REI Code Style Guides // Less
 
-> Code style guide for CSS and Less stylesheets at REI
+> Code style guide for Less stylesheets at REI
 
 ## <a name='TOC'>Table of Contents</a>
 
@@ -334,4 +334,3 @@ ul .product-list-item {
 **jsPerf**
 
   - [translate vs. translate3d vs. position](http://jsperf.com/translate3d-vs-positioning/4)
-  

@@ -1,6 +1,6 @@
-# REI Markup Style Guide
+# REI Code Style Guides // HTML
 
-> Code style guide for HTML and JSP markup at REI
+> Code style guide for HTML at REI
 
 *A mostly reasonable approach to HTML, inspired by [Airbnb's excellent style guide][airbnb-js-styleguide] and [Google's HTML/CSS style guide](google-html-css-style-guide)*
 

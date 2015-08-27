@@ -1,6 +1,6 @@
-# REI General Style Guide
+# REI Code Style Guides // JavaScript
 
-> General code style guide for at REI
+> Code style guide for JavaScript at REI
 
 ## filenames
 
