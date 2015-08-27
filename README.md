@@ -2,7 +2,7 @@
 
 > Code style guides for programming languages at REI
 
-- [General](/docs/general.md) (Applys to all languages)
+- [General](/docs/general.md) (Applies to all languages)
 - [HTML](/docs/html.md)
 - [Less](/docs/less.md)
 - [JavaScript](/docs/javascript.md)

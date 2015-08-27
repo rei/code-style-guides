@@ -1,4 +1,4 @@
-# REI Code Style Guides // HTML
+# [REI Code Style Guides](/) // HTML
 
 > Code style guide for HTML at REI
 

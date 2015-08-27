@@ -1,4 +1,4 @@
-# [REI Code Style Guides](/README.md) // JavaScript
+# [REI Code Style Guides](/) // JavaScript
 
 > Code style guide for JavaScript at REI
 
