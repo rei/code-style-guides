@@ -1,6 +1,10 @@
+REI Code Style Guides
+
+> Code style guides for programming languages at REI
+
 - [General Code Style Guide](/docs/general.md) - Code style guidelines that apply to all languages
-- [Less Code Style Guide](/docs/less.md)
 - [HTML Code Style Guide](/docs/html.md)
+- [Less Code Style Guide](/docs/less.md)
 - [JavaScript Code Style Guide](/docs/javascript.md)
 
 ## FAQs
