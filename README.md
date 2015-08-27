@@ -1,4 +1,4 @@
-REI Code Style Guides
+# REI Code Style Guides
 
 > Code style guides for programming languages at REI
 
