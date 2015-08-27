@@ -9,21 +9,21 @@ Here's a quick example of JavaScript formatted following this code style guide:
 ```js
 'use strict';
 
-function foo ( x, y, z ) {
-    bar( 1, b );
+function foo ( fizz, buzz, firstName ) {
+    bar( 1, buzz );
 
     var lastName;
-    var i = 0;
-    var x = { 0: 'zero', 1: 'one' };
-    var a = [ 0, 1, 2 ];
+    var idx     = 0;
+    var myObj   = { 0: 'zero', 1: 'one' };
+    var myArray = [ 0, 1, 2 ];
 
-    if ( z === 'Homer' ) {
+    if ( firstName === 'Homer' ) {
         lastName = 'Simpson';
     }
 
-    if ( !i > 10 ) {
-        for ( var j = 0; j < 10; j++ ) {
-            switch ( j ) {
+    if ( !idx > 10 ) {
+        for ( var deeperIdx = 0; deeperIdx < 10; deeperIdx++ ) {
+            switch ( deeperIdx ) {
                 case 0:
                     value = 'zero';
                     break;
@@ -31,28 +31,29 @@ function foo ( x, y, z ) {
                     value = 'one';
                     break;
             }
-            var c = j > 5 ? 'GT 5' : 'LE 5';
+            var result = deeperIdx > 5 ? 'GT 5' : 'LE 5';
         }
     } else {
-        var j = 0;
+        var evenDeeperIdx = 0;
         try {
-            while ( j < 10 ) {
-                if ( i === j || j > 5 ) {
-                    a[ j ] = i + j * 12;
+            while ( evenDeeperIdx < 10 ) {
+                if ( idx === evenDeeperIdx || evenDeeperIdx > 5 ) {
+                    myArray[ evenDeeperIdx ] = idx + evenDeeperIdx * 12;
                 }
-                i = ( j << 2 ) & 4;
-                j++;
+                idx = ( evenDeeperIdx << 2 ) & 4;
+                evenDeeperIdx++;
             }
             do {
-                j--;
-            } while ( j > 0 )
-        } catch ( e ) {
-            alert( 'Failure: ' + e.message );
+                evenDeeperIdx--;
+            } while ( evenDeeperIdx > 0 )
+        } catch ( err ) {
+            alert( 'Failure: ' + err.message );
         } finally {
-            reset( a, i );
+            reset( myArray, idx );
         }
     }
 }
+
 ```
 
 <a name='TOC'>Table of Contents</a>
