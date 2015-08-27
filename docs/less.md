@@ -1,4 +1,4 @@
-# [REI Code Style Guides](/) // Less
+# [REI Code Style Guides](/README.md) // Less
 
 > Code style guide for Less stylesheets at REI
 

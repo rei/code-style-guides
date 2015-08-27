@@ -1,4 +1,4 @@
-# [REI Code Style Guides](/) // General
+# [REI Code Style Guides](/README.md) // General
 
 > Code style guidelines that apply to all programming languages at REI
 
