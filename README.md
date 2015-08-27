@@ -1,7 +1,7 @@
-- [[General Code Style Guide|style-guides/general]] - Formatting guidelines that apply to all languages
-- [[Stylesheet Style Guide|style-guides/less.md]] - Stylesheet languages, CSS, Less
-- [[Markup Style Guide|style-guides/html.md]] - Markup languages, HTML, JSP, Handlebars, Markdown, etc.
-- [[JavaScript Style Guide|style-guides/javascript.md]] - Script languages, JavaScript
+- [General Code Style Guide](/docs/general.md] - Code style guidelines that apply to all languages
+- [Less Code Style Guide](/docs/less.md]
+- [HTML Code Style Guide](/docs/html.md]
+- [JavaScript Code Style Guide](/docs/javascript.md]
 
 ## FAQs
 
