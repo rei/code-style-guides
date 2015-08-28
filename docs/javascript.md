@@ -2,11 +2,59 @@
 
 > Code style guide for JavaScript at REI
 
-*A mostly reasonable approach to JavaScript, forked and modified from
-[Airbnb's excellent JavaScript style guide][airbnb-js-styleguide]*
+A mostly reasonable approach to JavaScript, forked and modified from [Airbnb's excellent JavaScript style guide][airbnb-js-styleguide](//github.com/airbnb/javascript).
 
-[airbnb-js-styleguide]: //github.com/airbnb/javascript
+Here's a quick example of JavaScript formatted following this code style guide:
 
+```js
+'use strict';
+
+function foo ( fizz, buzz, firstName ) {
+    bar( 1, buzz );
+
+    var lastName;
+    var idx     = 0;
+    var myObj   = { 0: 'zero', 1: 'one' };
+    var myArray = [ 0, 1, 2 ];
+
+    if ( firstName === 'Homer' ) {
+        lastName = 'Simpson';
+    }
+
+    if ( !idx > 10 ) {
+        for ( var deeperIdx = 0; deeperIdx < 10; deeperIdx++ ) {
+            switch ( deeperIdx ) {
+                case 0:
+                    value = 'zero';
+                    break;
+                case 1:
+                    value = 'one';
+                    break;
+            }
+            var result = deeperIdx > 5 ? 'GT 5' : 'LE 5';
+        }
+    } else {
+        var evenDeeperIdx = 0;
+        try {
+            while ( evenDeeperIdx < 10 ) {
+                if ( idx === evenDeeperIdx || evenDeeperIdx > 5 ) {
+                    myArray[ evenDeeperIdx ] = idx + evenDeeperIdx * 12;
+                }
+                idx = ( evenDeeperIdx << 2 ) & 4;
+                evenDeeperIdx++;
+            }
+            do {
+                evenDeeperIdx--;
+            } while ( evenDeeperIdx > 0 )
+        } catch ( err ) {
+            alert( 'Failure: ' + err.message );
+        } finally {
+            reset( myArray, idx );
+        }
+    }
+}
+
+```
 
 <a name='TOC'>Table of Contents</a>
 -----------------------------------
