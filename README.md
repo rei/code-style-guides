@@ -23,7 +23,7 @@ A developer whom would like to propose a change to a code style guide must:
 1. If needed, modify your PR per team recommendations and notify team of updates.
 1. Open a vote for 1 week.
 1. Merge the PR after:
-    - A minimum of of 3/4 of team indicate approval, at least one of whom must be a senior<sup>1</sup>, and
+    - A minimum of 3/4 of team indicate approval, at least one of whom must be a senior<sup>1</sup>, and
     - At least 1 week from initial presentation has passed to give everyone a chance to review
 1. Email the team with the update.
 
