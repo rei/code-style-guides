@@ -27,7 +27,7 @@ A developer whom would like to propose a change to a code style guide must:
     - At least 1 week's time has passed from request-vote email<sup>3</sup>.
 1. Email the team with the update.
 
-<sup>1</sup>Obstains will not be included from the approval calculation.<br>
+<sup>1</sup>Abstains will not be included in the vote approval calculation.<br>
 <sup>2</sup>Due to the team-wide impact<br>
 <sup>3</sup>To give everyone a chance to review<br>
 
