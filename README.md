@@ -11,11 +11,11 @@
 
 ### Why? Isn't code formatting up to personal preference?
 
-Consistent code formatting increases readability, and reduces the overhead of understanding another's (and your own old) code. A coder should be able to pick up any arbitrary file, and understand it quickly. Ideally, our codebase should look as though it were written by a single coder. You are not coding for yourself; you are coding for REI.
+Consistent code formatting increases readability, and reduces the overhead of understanding each other's code. A coder should be able to pick up any arbitrary file, and understand it quickly. Ideally, our codebase should look as though it were written by a single coder. You are not coding for yourself; you are coding for REI.
 
 ### How do I propose a change?
 
-A developer whom would like to propose a change to a code style guide must:
+A developer who would like to propose a change to a code style guide must:
 
 1. Create a PR with the proposed changes
 1. Email the team requesting review, including a link to the PR
