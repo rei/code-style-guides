@@ -30,3 +30,17 @@ A developer who would like to propose a change to a code style guide must:
 ### What about code with old formatting?
 
 There's no need to make a specific effort to re-format old code, but if you're modifying a file with outdated formatting, please update what you can while you're in there.
+
+### Editor Configuration
+
+Set up your editor to automatically format code per our style guide:
+
+- **Intellij**
+  - Import [settings](./rei_standard_intellij_settings.jar).
+  - In Settings, select Editor->Code Style and select "REI IT" scheme from the drop-down menu.
+  - To format code, select Code->Reformat Code.
+
+- **Sublime Text**
+  - Install [JS Beautify](https://github.com/enginespot/js-beautify-sublime).
+  - Update settings using [this config](./.jsbeautifyrc).
+  - Code is formatted automatically on save by default. You can turn this off in the .jsbeautifyrc file and format on demand using CNTL-OPTION-F (mac) CNTL-ALT-F (win).
