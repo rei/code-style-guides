@@ -20,15 +20,16 @@ A developer who would like to propose a change to a code style guide must:
 1. Create a PR with the proposed changes.
 1. Email the team requesting review, including a link to the PR.
 1. Present your suggested update at the next team meeting for an open discussion.
-1. If needed, modify your PR per team recommendations and notify team of updates.
-1. Open a vote for 1 week.
+    - If needed, modify your PR per team recommendations and notify team of updates.
+1. Email the team requesting a vote, open for 1 week.
 1. Merge the PR after:
     - A minimum of 2/3 of team indicate approval<sup>1</sup>, at least one of whom must be a senior<sup>2</sup>, and
-    - At least 1 week's time has passed from initial presentation to give everyone a chance to review
+    - At least 1 week's time has passed from request-vote email<sup>3</sup>.
 1. Email the team with the update.
 
-<sup>1</sup>No-votes will not be included in the calculation.<br>
+<sup>1</sup>Abstains will not be included in the vote approval calculation.<br>
 <sup>2</sup>Due to the team-wide impact<br>
+<sup>3</sup>To give everyone a chance to review<br>
 
 ### What about code with old formatting?
 
