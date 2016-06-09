@@ -17,15 +17,19 @@ Consistent code formatting increases readability, and reduces the overhead of un
 
 A developer who would like to propose a change to a code style guide must:
 
-1. Create a PR with the proposed changes
-1. Email the team requesting review, including a link to the PR
+1. Create a PR with the proposed changes.
+1. Email the team requesting review, including a link to the PR.
+1. Present your suggested update at the next team meeting for an open discussion.
+    - If needed, modify your PR per team recommendations and notify team of updates.
+1. Email the team requesting a vote, open for 1 week.
 1. Merge the PR after:
-    - A minimum of two team members indicate approval, at least one of whom must be a senior<sup>1</sup>, and
-    - At least 24 hours have passed since the review-request email was sent<sup>2</sup>
-1. Email the team with the update
+    - A minimum of 2/3 of team indicate approval<sup>1</sup>, at least one of whom must be a senior<sup>2</sup>, and
+    - At least 1 week's time has passed from request-vote email<sup>3</sup>.
+1. Email the team with the update.
 
-<sup>1</sup>Due to the team-wide impact<br>
-<sup>2</sup>To give everyone a chance to review if they want
+<sup>1</sup>Abstains will not be included in the vote approval calculation.<br>
+<sup>2</sup>Due to the team-wide impact<br>
+<sup>3</sup>To give everyone a chance to review<br>
 
 ### What about code with old formatting?
 
