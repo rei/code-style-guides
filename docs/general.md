@@ -63,14 +63,12 @@ defintion of a "Line" from the Posix standard:
 
 For example:
 ```
-
 module.exports = {
      handleDropDownClick: handleDropDownClick
 };EOF
 ```
 
-should be
-
+Should be:
 ```
 module.exports = {
      handleDropDownClick: handleDropDownClick
