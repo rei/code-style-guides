@@ -66,12 +66,12 @@ For example:
 
 module.exports = {
      handleDropDownClick: handleDropDownClick
-};EOF```
+};EOF
+```
 
 should be
 
 ```
-
 module.exports = {
      handleDropDownClick: handleDropDownClick
 };
