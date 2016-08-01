@@ -58,7 +58,7 @@ function foo () {
 The contents of a file should **end with a new line**
 
 This is a general best practice so that files are unix friendly, due to the
-defintion of a "Line" from the Posix standard:
+definition of a "Line" from the Posix standard:
 > A sequence of zero or more non- <newline> characters plus a terminating <newline> character.
 
 For example:
