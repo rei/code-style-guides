@@ -81,3 +81,4 @@ ALL new lines should be **unix new line**: `\n` *also known as LF or line feed*
 
 Do **NOT** use windows carriage return `\r` (CR, Carriage Return, ^M) or a mac new line `\r\n` (CR+LF)
 
+In most cases you won't have to worry about this, especially if your git repository is set to use autocrlf which will do this conversion under the hood. More reading can be found here: http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
