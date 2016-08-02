@@ -57,28 +57,26 @@ function foo () {
 
 The contents of a file should **end with a new line**
 
-This is a general best practice so that files are unix friendly, due to the
-definition of a "Line" from the Posix standard:
-> A sequence of zero or more non- <newline> characters plus a terminating <newline> character.
-
-For example:
-```
-module.exports = {
-     handleDropDownClick: handleDropDownClick
-};EOF
-```
+This is a general best practice so that files are unix friendly. Due to the
+definition of a "Line" from the [Posix standard](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206), some unix tools may not recognize or play "nice" with files that do not conform.
+<sup>[[1]](http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline#comment-17614747)</sup>
+<sup>[[2]](http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline#comment-20018808)</sup>
+<sup>[[3]](http://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline#comment-52935541)</sup>
 
 Should be:
 ```
 module.exports = {
      handleDropDownClick: handleDropDownClick
-};
-new line goes here (\n)EOF
+};⏎
+
+END_OF_FILE
 ```
 
+Should not be:
+```
+module.exports = {
+     handleDropDownClick: handleDropDownClick
+};END_OF_FILE
+```
 
-ALL new lines should be **unix new line**: `\n` *also known as LF or line feed*
-
-Do **NOT** use windows carriage return `\r` (CR, Carriage Return, ^M) or a mac new line `\r\n` (CR+LF)
-
-In most cases you won't have to worry about this, especially if your git repository is set to use autocrlf which will do this conversion under the hood. More reading can be found here: http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+All non-unix newlines (CR `\r` & CR+LF `\r\n`) are automatically converted by git to a **unix new line** (`\n`) upon commit, so no need to be concerned when working across windows/mac.
