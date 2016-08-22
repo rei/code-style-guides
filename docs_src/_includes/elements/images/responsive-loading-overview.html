@@ -1,0 +1,52 @@
+<h3 id="images-responsive-sizing" class="images-responsive-sizing">Responsive Image Sizing</h3>
+
+{% include /elements/images/responsive-loading-problem-paragraph.html %}
+
+<h4>attribute based solution</h4>
+
+Use the following attributes to describe your alternate image sources and enable the <code>images-responsive-loader</code> module.
+
+{% highlight html %}
+
+<img class="images-responsive-loader"
+     src="image-md.jpg"
+     data-src-xs="image-xs.jpg"
+     data-src-sm="image-sm.jpg"
+     data-src-md="image-md.jpg"
+     data-src-lg="image-lg.jpg"
+     data-src-xl="image-xl.jpg"
+>
+{% endhighlight %}
+
+<p>See full documentation on the <a href="../../style-and-behavior/images-responsive-loader">images-responsive-loader</a> page</p>
+
+<h4>srcset/size subset</h4>
+Use a subset of the <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#introduction-3:viewport-based-selection-2">embedded content standard</a> [<a href="http://responsiveimages.org">1</a>]. To appropriately use the pollyfill, use subset of srcset/size (viewport) and enable the <code>pollyfill-src-set-viewport</code> module.
+
+{% highlight html %}
+
+<img src="image-md.jpg"
+     class="pollyfill-src-set-viewport"
+     srcset="image-xs.jpg 320w,
+             image-sm.jpg 480w,
+             image-md.jpg 768w,
+             image-lg.jpg 1024w,
+             image-xl.jpg 1280w"
+     sizes="100vw"
+/>
+{% endhighlight %}
+
+<p>See full documentation on the <a href="../../styles-and-behavior/pollyfill-srcset-viewport">pollyfill-srcset-viewport</a> module page</p>
+
+<h4>Notes:</h4>
+
+<p>Both solutions can function along-side the <a href="../../modules/lazy-load">lazy loading</a> module.</p>
+
+<p>Use whichever solution fullfills your needs best, there are <a href="./images-responsive-sizing-tradeoffs.html">tradeoffs are documented here</a></p>
+
+<h3 id="images-lazy-load" class="">Lazy Loading</h3>
+<p>Images can be lazy loaded via the <code>.lazy-load</code> class if the <code>lazy-load</code> module is enabled. This will ensure that the image is only loaded when it needs to be and can vastly improve your pages performance. <a href="../../modules/lazy-load">See the lazy load module</a></p>
+
+{% highlight html %}
+<img src="..." class="lazy-load" alt="Lazy Loaded image">
+{% endhighlight %}

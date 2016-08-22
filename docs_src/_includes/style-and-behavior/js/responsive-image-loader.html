@@ -1,0 +1,284 @@
+<section class="vertical-push-3">
+  <h2 id="responsive-image-loader" class="page-header status status-chat">Responsive Image Loader</h2>
+
+  <p class="lead">We know you're here for the <a href="#responsive-image-loader-demos">demos</a></p>
+
+  <p class="lead">
+  {% include /elements/images/responsive-loading-problem-paragraph.html %}
+  </p>
+
+  <h3 id="responsive-image-loader-default">Default image-responsive-loader usage</h3>
+  <p>This default configuration will handle all images with the class <code>img-responsive-loader</code>. Based on the screen size, it will attempt to determine the appropriate image to load when supplied with the proper source sizing attributes.</p>
+
+  <div class="well" data-example-id="simple-responsive-image-loader">
+
+        <img class="img-responsive-loader"
+            alt="Can specify different aspect ratios for different resolutions"
+            width="640"
+            src="http://placehold.it/640x640/555"
+            data-src-xs="http://placehold.it/160x160/333"
+            data-src-sm="http://placehold.it/360x360/444"
+            data-src-md="http://placehold.it/640x640/555"
+            data-src-lg="http://placehold.it/1280x1280/666"
+            data-src-xl="http://placehold.it/2560x2560/777"
+            >
+
+  </div>
+
+{% highlight html %}
+
+<img class="img-responsive-loader"
+     src="image-md.jpg"
+     data-src-xs="image-xs.jpg"
+     data-src-sm="image-sm.jpg"
+     data-src-md="image-md.jpg"
+     data-src-lg="image-lg.jpg"
+     data-src-xl="image-xl.jpg"
+>
+{% endhighlight %}
+
+<h3>Initialization</h3>
+
+<h4>Easy jQuery setup - default configuration</h4>
+<p>The markup will only function to our specifications if the module has been properly initialized</p>
+
+{% highlight js %}
+
+// Initializes the default configuration of responsive-image-loader
+$(document).ready(function () {
+    $(document.body).responsiveImageLoader();
+});
+
+{% endhighlight %}
+
+<p>Since we are good citizens, we would put this near <code>&lt;/body&gt;</code>
+inside of a <code>foot.js</code> file for example, just after <code>rei-cedar.js</code>.</p>
+
+<div class="bs-callout bs-callout-warning" id="callout-buttons-single-pretoggled">
+  <h6>Flash of incorrect resolution image</h6>
+
+<p>If loading this way causes a flash of improperly sized images you most likely
+don't have a very performant page. The slower the page the longer it will take
+for the initialization code to run.
+
+<p>The longer it takes for the initialization code to run, the more  likely the
+browser will be downloading an image that it isn't going to use which might be
+an additional (yet small) performance penalty. You can mitigate this by using a
+smaller sized default <code>src</code> value.
+</p>
+
+<p>
+If this is an issue with user perception of performance or performance in
+general, the best course of action is to improve your pages critical rendering
+path time and slim down your javascript execution. Have fun with that &#x1F60A;</p>
+
+</div>
+
+<h4>CommonJS (Browserify) - no jquery - default configuration</h4>
+
+<p>If you need to double down and add yet some more javascript towards the head of your document, you could have a javascript bundle in your head with the following</p>
+
+{% highlight js %}
+
+// This could be inlined or in a bundled head.js using sync attribute
+var responsiveImageLoader = require('cedar/responsive-image-loader-no-jquery');
+
+// Initializes the default configuration of responsive-image-loader
+new responsiveImageLoader(document.body).init();
+
+{% endhighlight %}
+
+<div class="bs-callout bs-callout-danger" id="callout-buttons-ff-autocomplete">
+  <h6>Performance Concerns</h6>
+<p>
+This is a bad idea. It's very lean and try's to be performant as possible but
+all <a href="https://developers.google.com/speed/docs/insights/BlockingJS">javascript execution is render blocking</a>
+by default.
+
+This is especially penalizing with the default configuration behavior. With that
+said, you have that capability. You should make sure your script tag has the
+<code>async</code> attribute if you go this route and look further into more
+performance oriented configurations.
+</p>
+</div>
+
+<h4>CommonJS (Browserify) - no jquery, priming only - performance configuration</h4>
+
+<p>
+The initialization and usage are more verbose and intricate to achieve optimal
+performance. This is an obvious trade off from simplicity to complexity for
+performance gains.
+</p>
+
+<div class="bs-callout bs-callout-warning" id="callout-tooltip-hidden">
+    <h6>Complexity tradeoff</h6>
+<p>
+The complexity tradeoff may not be worth it if the basic
+configuration does not impact user perception of performance.
+</p>
+</div>
+
+
+{% highlight html %}
+
+<!-- <head> -->
+<script>
+// This should actually be inlined
+var ResponsiveImageLoaderPrimer = require('cedar/responsive-image-loader-priming');
+
+// Initialize opt-in performance configuration of responsive-image-loader
+window.REI = window.REI || {};
+REI.resImgLoader = new ResponsiveImagePrimer(document.body).initPrimer();
+</script>
+<!-- </head> -->
+
+{% endhighlight %}
+
+<p>All non-essential execution is opt-in and explicit</p>
+
+{% highlight html %}
+<!-- content -->
+<img src="image-md.jpg" id="image"
+     data-src-xs="image-xs.jpg"
+     data-src-sm="image-sm.jpg"
+     data-src-md="image-md.jpg"
+     data-src-lg="image-lg.jpg"
+     data-src-xl="image-xl.jpg"
+><script>if (REI.resImgLoader) REI.resImgLoader.setupImage('image')</script>
+<!-- /content -->
+{% endhighlight %}
+
+<h5>Encapsulation</h5>
+
+<p>
+The best way to mitigate the intricacy / verbosity of this is to use your
+templating language to contain this.
+</p>
+
+{% highlight html %}
+<!-- <head> -->
+<script th:snippet="@{~/responsive-image-primer-snippet.js}"></script>
+<!-- </head> -->
+{% endhighlight %}
+
+
+{% highlight html %}
+<!-- content -->
+<img th:src="image-md.jpg" id="image"
+     th:src-xs="image-xs.jpg"
+     th:src-sm="image-sm.jpg"
+     th:src-md="image-md.jpg"
+     th:src-lg="image-lg.jpg"
+     th:src-xl="image-xl.jpg"
+>
+<!-- /content -->
+{% endhighlight %}
+
+
+  <h3>Source Sizing Attributes</h3>
+
+  <p>@TODO document sizing, all values required? what's the behavior if their not? what are the size values at what resolutions are they used? etc</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped js-options-table js-options-table">
+      <thead>
+        <tr>
+          <th>Attribute Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>data-src-xs</td>
+          <td>Document sizing @TODO</td>
+        </tr>
+        <tr>
+          <td>data-src-sm</td>
+          <td>Document sizing @TODO</td>
+        </tr>
+        <tr>
+          <td>data-src-md</td>
+          <td>Document sizing @TODO</td>
+        </tr>
+        <tr>
+          <td>data-src-lg</td>
+          <td>Document sizing @TODO</td>
+        </tr>
+        <tr>
+          <td>data-src-xl</td>
+          <td>Document sizing @TODO</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+  <h3>Configuration Options</h3>
+
+<p>
+With all initialization options, you can pass in a configurationOptions
+object to the constructor.</p>
+
+<p>An example of how to pass in an example configuration: </p>
+
+{% highlight js %}
+
+// Initializes the default configuration of responsive-image-loader
+$(document).ready(function () {
+    $(document.body).responsiveImageLoader({
+        imagesSelector: '.img-responsive-loader'
+    });
+});
+{% endhighlight %}
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped js-options-table js-options-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Default value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>imagesSelector</td>
+          <td>A selector string, typically a class that will find the collection of elements to be acted upon. The selector string should be <a href="https://www.w3.org/TR/selectors-api/">Selectors API Level 1</a> AND <a href="https://www.w3.org/TR/selectors-api/">jQuery</a> compatible</td>
+          <td><code>.img-responsive-loader</code></td>
+        </tr>
+        <tr>
+          <td>@TODO: property name</td>
+          <td>@TODO: Property description</td>
+          <td>@TODO: default value</td>
+        </tr>
+        <tr>
+          <td>@TODO: property name</td>
+          <td>@TODO: Property description</td>
+          <td>@TODO: default value</td>
+        </tr>
+        <tr>
+          <td>@TODO: property name</td>
+          <td>@TODO: Property description</td>
+          <td>@TODO: default value</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+  <h4 id="responsive-image-loader-pager">Performance Configurations</h4>
+
+  <h3 id="responsive-image-loader-demos">Demos</h3>
+
+<ul>
+  <li><a href="demo/res-img-initialization-default" target="_blank">Default initialization</a>
+  <li><a href="demo/res-img-initialization-in-head" target="_blank">Initialization in head (no jquery)</a>
+  <li><a href="demo/res-img-initialization-in-primer" target="_blank">Initialization with primer only</a>
+  <li><a href="demo/res-img-full-width" target="_blank">Full-width responsive image</a>
+  <li><a href="demo/res-img-centered-large" target="_blank">Centered extra large image, almost full width</a>
+  <li><a href="demo/res-img-with-lazy-load" target="_blank">Responsive Image Loader With lazy load module</a>
+  <li><a href="demo/res-img-grid-four" target="_blank">Grid of four responsive images</a>
+  <li><a href="demo/res-img-grid-three" target="_blank">Grid of three responsive images</a>
+  <li><a href="demo/res-img-breakpoint-two-col-2-one-col" target="_blank">With breakpoints, two col to single col responsive image</a>
+  <li><a href="demo/res-img-breakpoint-three-col-2-two-col" target="_blank">With breakpoint, three col to two col</a>
+</ul>
+
+</section>

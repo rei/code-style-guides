@@ -490,6 +490,14 @@ items:
               slug: utility-responsive
               href: /style-and-behavior/utility-responsive/
 
+            - label: Responsive Image Loading
+              slug: utility-responsive
+              href: /style-and-behavior/responsive-image-loading/
+
+            - label: Image Lazy Loader
+              slug: utility-responsive
+              href: /style-and-behavior/image-lazy-loader/
+
             - label: Less Variables
               slug: less-variables
               href: /style-and-behavior/less-variables/
