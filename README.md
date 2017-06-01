@@ -5,7 +5,7 @@
 - [General](/docs/general.md) (Applies to all languages)
 - [HTML](/docs/html.md)
 - [Less](/docs/less.md)
-- [JavaScript](/docs/javascript.md)
+- [JavaScript](https://github.com/airbnb/javascript)
 
 ## FAQs
 
