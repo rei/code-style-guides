@@ -41,7 +41,9 @@ To enable your editor/IDE to format your code automatically per the `.eslintrc` 
 
 As an example, in Visual Studio Code:
 
-  - Hit ⌘-P (Mac) and paste in `ext install vscode-eslint` (Refer to [eslint extension documentation](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).)
-  - You can configure it to run `onType`, `onSave`.
+  - Hit ⌘-P (Mac) and paste in `ext install vscode-eslint`. (Refer to [eslint extension documentation](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
+  - You can configure it to run `onType` or `onSave`.
   - If you want to format via shortcut, go to Code ⇨ Preferences ⇨ Keyboard Shortcuts and search for `eslint` and assign shortcut to 
   - If you want to format on save, go to Code ⇨ Preferences ⇨ Settings and add an entry: `"eslint.autoFixOnSave": true`.
+
+Your editor will have a similar setup.
