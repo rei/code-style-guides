@@ -37,14 +37,11 @@ There's no need to make a specific effort to re-format old code, but if you're m
 
 ### Editor Configuration
 
-Set up your editor to automatically format code per our style guide:
+To enable your editor/IDE to format your code automatically per the `.eslintrc` configuration file that we use, you'll need to install an eslint plugin/extension. This will be different depending on the editor that you are using so consult the documentation.
 
-- **Intellij**
-  - Import [settings](./rei_standard_intellij_settings.jar).
-  - In Settings, select Editor->Code Style and select "REI IT" scheme from the drop-down menu.
-  - To format code, select Code->Reformat Code.
+As an example, in Visual Studio Code:
 
-- **Sublime Text**
-  - Install [JS Beautify](https://github.com/enginespot/js-beautify-sublime).
-  - Update settings using [this config](./.jsbeautifyrc).
-  - Code is formatted automatically on save by default. You can turn this off in the .jsbeautifyrc file and format on demand using CNTL-OPTION-F (mac) CNTL-ALT-F (win).
+  - Hit ⌘-P (Mac) and paste in `ext install vscode-eslint`
+  - You can configure it to run `onType`, `onSave`.
+  - If you want to format via shortcut, go to Code ⇨ Preferences ⇨ Keyboard Shortcuts and search for `eslint` and assign shortcut to 
+  - If you want to format on save, go to Code ⇨ Preferences ⇨ Settings and add an entry: `"eslint.autoFixOnSave": true`.
