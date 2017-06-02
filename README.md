@@ -37,7 +37,7 @@ There's no need to make a specific effort to re-format old code, but if you're m
 
 ### Editor Configuration
 
-To enable your editor/IDE to format your code automatically per the `.eslintrc` configuration file that we use, you'll need to install an eslint plugin/extension. This will be different depending on the editor that you are using so consult the documentation.
+To enable your editor/IDE to format your code automatically per the [eslint  configuration file](//github.com/rei/code-style-guides/blob/add-eslint-config/.eslintrc.json) that we use, you'll need to install an eslint plugin/extension. This will be different depending on the editor that you are using so consult the documentation.
 
 As an example, in Visual Studio Code:
 
