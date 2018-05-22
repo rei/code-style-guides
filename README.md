@@ -5,6 +5,7 @@
 - [General](/docs/general.md) (Applies to all languages)
 - [HTML](/docs/html.md)
 - [Less](/docs/less.md)
+- [CSS/SASS](https://github.com/airbnb/css)
 - [JavaScript](https://github.com/airbnb/javascript)
 
 ## FAQs
@@ -47,3 +48,4 @@ As an example, in Visual Studio Code:
   - If you want to format on save, go to Code ⇨ Preferences ⇨ Settings and add an entry: `"eslint.autoFixOnSave": true`.
 
 Your editor will have a similar setup.
+
